@@ -1,0 +1,9 @@
+[build]
+  publish = "website"
+  command = "echo 'Static site deploy'"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false

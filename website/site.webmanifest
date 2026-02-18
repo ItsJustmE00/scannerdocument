@@ -1,0 +1,16 @@
+{
+  "name": "Scanner OCR Offline",
+  "short_name": "Scanner Offline",
+  "description": "Scan et extraction de donnees 100% hors ligne",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#0c7d79",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}

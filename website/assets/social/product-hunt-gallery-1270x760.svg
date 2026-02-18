@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1270" height="760" viewBox="0 0 1270 760" role="img" aria-labelledby="title desc">
+  <title id="title">Product Hunt Gallery Asset</title>
+  <desc id="desc">Scanner OCR Offline gallery card.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#091b29" />
+      <stop offset="100%" stop-color="#0f665f" />
+    </linearGradient>
+  </defs>
+  <rect width="1270" height="760" fill="url(#bg)" />
+  <g font-family="Space Grotesk, Segoe UI, Arial, sans-serif" fill="#ffffff">
+    <text x="80" y="120" font-size="42" font-weight="700">Scanner OCR Offline</text>
+    <text x="80" y="235" font-size="66" font-weight="800">Offline document scanner</text>
+    <text x="80" y="315" font-size="66" font-weight="800">with smart extraction</text>
+
+    <rect x="80" y="380" width="360" height="54" rx="27" fill="#ffffff" opacity="0.16" />
+    <text x="115" y="416" font-size="30" font-weight="700">No cloud. No account.</text>
+
+    <rect x="80" y="454" width="280" height="54" rx="27" fill="#ffffff" opacity="0.16" />
+    <text x="115" y="490" font-size="30" font-weight="700">Privacy by design</text>
+
+    <rect x="80" y="528" width="325" height="54" rx="27" fill="#ffffff" opacity="0.16" />
+    <text x="115" y="564" font-size="30" font-weight="700">PDF / Excel / TXT / JSON</text>
+
+    <rect x="80" y="620" width="285" height="64" rx="14" fill="#ffffff" />
+    <text x="125" y="663" font-size="34" font-weight="800" fill="#0a2936">Get early access</text>
+  </g>
+</svg>

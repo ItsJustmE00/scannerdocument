@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Remplacer par ton vrai domaine en production.
+Sitemap: https://your-domain.com/sitemap.xml

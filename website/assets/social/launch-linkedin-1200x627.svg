@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="627" viewBox="0 0 1200 627" role="img" aria-labelledby="title desc">
+  <title id="title">Scanner OCR Offline Launch</title>
+  <desc id="desc">Social launch asset for LinkedIn and Facebook.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a2936" />
+      <stop offset="100%" stop-color="#0c7d79" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="627" fill="url(#bg)" />
+  <circle cx="1020" cy="120" r="200" fill="#ffffff" opacity="0.08" />
+  <circle cx="150" cy="540" r="240" fill="#ffffff" opacity="0.07" />
+  <g font-family="Space Grotesk, Segoe UI, Arial, sans-serif" fill="#ffffff">
+    <text x="72" y="95" font-size="34" font-weight="700">Scanner OCR Offline</text>
+    <text x="72" y="170" font-size="58" font-weight="800">Scan. Classer. Exporter.</text>
+    <text x="72" y="230" font-size="58" font-weight="800">Sans cloud, sans login.</text>
+
+    <rect x="72" y="280" width="250" height="52" rx="26" fill="#ffffff" opacity="0.15" />
+    <text x="102" y="315" font-size="28" font-weight="700">100% offline</text>
+
+    <rect x="72" y="355" width="320" height="52" rx="26" fill="#ffffff" opacity="0.15" />
+    <text x="102" y="390" font-size="28" font-weight="700">PDF / Excel / TXT / JSON</text>
+
+    <rect x="72" y="430" width="280" height="52" rx="26" fill="#ffffff" opacity="0.15" />
+    <text x="102" y="465" font-size="28" font-weight="700">Facture / Recu / Contrat</text>
+
+    <rect x="72" y="530" width="275" height="56" rx="14" fill="#ffffff" />
+    <text x="112" y="567" font-size="28" font-weight="800" fill="#0a2936">Essayer maintenant</text>
+  </g>
+</svg>
