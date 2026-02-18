@@ -23,18 +23,18 @@ Date: 2026-02-18
 Run:
 
 ```bash
-./launch/prelaunch-audit.sh your-domain.com
+./launch/prelaunch-audit.sh scannerdocument.vercel.app
 ```
 
 Then:
 
 ```bash
-./website/indexnow-submit.sh your-domain.com
+./website/indexnow-submit.sh scannerdocument.vercel.app
 ```
 
 ## Manual checklist
-- [ ] https://your-domain.com opens
-- [ ] https://your-domain.com/privacy.html opens
-- [ ] https://your-domain.com/support.html opens
+- [ ] https://scannerdocument.vercel.app opens
+- [ ] https://scannerdocument.vercel.app/privacy.html opens
+- [ ] https://scannerdocument.vercel.app/support.html opens
 - [ ] robots + sitemap accessible
 - [ ] GSC + Bing verification completed

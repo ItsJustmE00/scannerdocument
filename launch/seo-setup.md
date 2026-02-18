@@ -3,8 +3,8 @@
 Date: 2026-02-18
 
 ## 1) Avant tout
-- Remplacer `https://your-domain.com` dans tous les fichiers `website/`.
-- Option rapide: `./launch/configure-domain.sh your-domain.com <google_token> <bing_token>`
+- Remplacer `https://scannerdocument.vercel.app` dans tous les fichiers `website/`.
+- Option rapide: `./launch/configure-domain.sh scannerdocument.vercel.app <google_token> <bing_token>`
 - Option tout-en-un: `./launch/release-ready.sh <domain> <apple_url> <play_url> <google_token> <bing_token>`
 - Deployer le dossier `website/` sur ton hebergeur (Netlify, Vercel, Cloudflare Pages, etc.).
 - Verifier que le site est servi en HTTPS.
@@ -12,7 +12,7 @@ Date: 2026-02-18
 ## 2) Google Search Console
 1. Ajouter la propriete domaine ou URL-prefix.
 2. Verifier avec la meta tag ou DNS TXT.
-3. Soumettre: `https://your-domain.com/sitemap.xml`.
+3. Soumettre: `https://scannerdocument.vercel.app/sitemap.xml`.
 4. Verifier l'indexation de `/`, `/privacy.html`, `/terms.html`, `/support.html`.
 
 ## 3) Bing Webmaster Tools
@@ -25,12 +25,12 @@ Le fichier de cle est deja cree: `website/indexnow-key.txt`.
 Script pret: `website/indexnow-submit.sh`.
 
 Apres deploiement, tester:
-- `https://your-domain.com/indexnow-key.txt`
+- `https://scannerdocument.vercel.app/indexnow-key.txt`
 
 Puis pinger IndexNow:
 
 ```bash
-curl "https://api.indexnow.org/indexnow?url=https://your-domain.com/&key=8d44f8e8f0a94f8da2f8181e63811235"
+curl "https://api.indexnow.org/indexnow?url=https://scannerdocument.vercel.app/&key=8d44f8e8f0a94f8da2f8181e63811235"
 ```
 
 Pour soumettre plusieurs URLs:
@@ -39,14 +39,14 @@ Pour soumettre plusieurs URLs:
 curl -X POST "https://api.indexnow.org/indexnow" \
   -H "Content-Type: application/json" \
   -d '{
-    "host": "your-domain.com",
+    "host": "scannerdocument.vercel.app",
     "key": "8d44f8e8f0a94f8da2f8181e63811235",
-    "keyLocation": "https://your-domain.com/indexnow-key.txt",
+    "keyLocation": "https://scannerdocument.vercel.app/indexnow-key.txt",
     "urlList": [
-      "https://your-domain.com/",
-      "https://your-domain.com/privacy.html",
-      "https://your-domain.com/terms.html",
-      "https://your-domain.com/support.html"
+      "https://scannerdocument.vercel.app/",
+      "https://scannerdocument.vercel.app/privacy.html",
+      "https://scannerdocument.vercel.app/terms.html",
+      "https://scannerdocument.vercel.app/support.html"
     ]
   }'
 ```

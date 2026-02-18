@@ -58,9 +58,9 @@ Storyboard 20-30 secondes:
 6. Message final: "Sans cloud. Sans login. 100% offline."
 
 ## 7) URLs obligatoires
-- Privacy policy URL: `https://your-domain.com/privacy.html`
-- Support URL: `https://your-domain.com/support.html`
-- Website URL: `https://your-domain.com/`
+- Privacy policy URL: `https://scannerdocument.vercel.app/privacy.html`
+- Support URL: `https://scannerdocument.vercel.app/support.html`
+- Website URL: `https://scannerdocument.vercel.app/`
 
 ## 8) Categorie app
 - Primaire: **Productivity**
@@ -71,7 +71,7 @@ Storyboard 20-30 secondes:
 - Cocher selon les questionnaires stores: pas de violence, pas de jeu d'argent, pas de contenu adulte.
 
 ## 10) Notes importantes avant soumission
-- Remplacer `your-domain.com` partout.
+- Remplacer `scannerdocument.vercel.app` partout.
 - Verifier que les URLs legales sont publiques et en HTTPS.
 - Uniformiser les textes store et landing page (meme promesse produit).
 

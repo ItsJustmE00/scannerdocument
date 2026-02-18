@@ -37,8 +37,8 @@ Tu peux:
 - classer automatiquement,
 - exporter en PDF, Excel, TXT ou JSON.
 
-Lien: https://your-domain.com/
-Support: https://your-domain.com/support.html
+Lien: https://scannerdocument.vercel.app/
+Support: https://scannerdocument.vercel.app/support.html
 
 Merci pour ton retour !"
 

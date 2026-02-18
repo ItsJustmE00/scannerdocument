@@ -41,13 +41,13 @@ Age Rating:
 4+
 
 Privacy Policy URL:
-https://your-domain.com/privacy.html
+https://scannerdocument.vercel.app/privacy.html
 
 Support URL:
-https://your-domain.com/support.html
+https://scannerdocument.vercel.app/support.html
 
 Marketing URL:
-https://your-domain.com/
+https://scannerdocument.vercel.app/
 
 ## Google Play Console
 
@@ -68,7 +68,7 @@ Fonctions cles:
 - Export PDF, Excel, TXT et JSON.
 
 Privacy Policy URL:
-https://your-domain.com/privacy.html
+https://scannerdocument.vercel.app/privacy.html
 
 Support Email:
-support@your-domain.com
+support@scannerdocument.vercel.app

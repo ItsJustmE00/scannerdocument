@@ -3,10 +3,10 @@
 Date: 2026-02-18
 
 ## URLs
-- Website: https://your-domain.com/
-- Privacy: https://your-domain.com/privacy.html
-- Support: https://your-domain.com/support.html
-- Support Email: support@your-domain.com
+- Website: https://scannerdocument.vercel.app/
+- Privacy: https://scannerdocument.vercel.app/privacy.html
+- Support: https://scannerdocument.vercel.app/support.html
+- Support Email: support@scannerdocument.vercel.app
 - Apple Store URL: APPLE_STORE_URL_PLACEHOLDER
 - Play Store URL: PLAY_STORE_URL_PLACEHOLDER
 
@@ -45,13 +45,13 @@ Age Rating:
 4+
 
 Privacy Policy URL:
-https://your-domain.com/privacy.html
+https://scannerdocument.vercel.app/privacy.html
 
 Support URL:
-https://your-domain.com/support.html
+https://scannerdocument.vercel.app/support.html
 
 Marketing URL:
-https://your-domain.com/
+https://scannerdocument.vercel.app/
 
 ## Google Play Console
 
@@ -72,7 +72,7 @@ Fonctions cles:
 - Export PDF, Excel, TXT et JSON.
 
 Privacy Policy URL:
-https://your-domain.com/privacy.html
+https://scannerdocument.vercel.app/privacy.html
 
 Support Email:
-support@your-domain.com
+support@scannerdocument.vercel.app

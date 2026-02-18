@@ -13,7 +13,7 @@ Get first 30-50 real users in the first week.
 ## Message template (DM)
 "Je lance une app mobile qui scanne et classe les documents 100% hors ligne.
 Tu peux tester et me dire ce qui bloque en 2 minutes ?
-Lien: https://your-domain.com/"
+Lien: https://scannerdocument.vercel.app/"
 
 ## 3 asks to maximize support
 1. Install and run one real scan.
