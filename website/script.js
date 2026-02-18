@@ -82,8 +82,13 @@
   }
 
   window.addEventListener('load', function () {
-    navigator.serviceWorker.register('/sw.js').catch(function () {
-      // Silent fail: the website still works without background caching.
-    });
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then(function (registration) {
+        registration.update();
+      })
+      .catch(function () {
+        // Silent fail: the website still works without background caching.
+      });
   });
 })();

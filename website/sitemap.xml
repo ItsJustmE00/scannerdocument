@@ -7,19 +7,19 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://scannerdocument.vercel.app/privacy.html</loc>
+    <loc>https://scannerdocument.vercel.app/privacy</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://scannerdocument.vercel.app/terms.html</loc>
+    <loc>https://scannerdocument.vercel.app/terms</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://scannerdocument.vercel.app/support.html</loc>
+    <loc>https://scannerdocument.vercel.app/support</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
