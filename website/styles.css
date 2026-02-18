@@ -302,8 +302,12 @@ a {
 
 .footer-cols {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr 1fr 1.35fr;
   gap: 12px;
+}
+
+.footer-col {
+  min-width: 0;
 }
 
 .footer-col h4 {
@@ -322,9 +326,13 @@ a {
 }
 
 .footer-col a {
+  display: inline-block;
+  max-width: 100%;
   text-decoration: none;
   color: #b3cfe1;
   font-size: 0.9rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .footer-col a:hover {
