@@ -15,19 +15,13 @@
     <meta property="og:title" content="Support | Scanner OCR Offline" />
     <meta
       property="og:description"
-      content="Aide rapide pour scan, extraction de donnees, export PDF/Excel/TXT et classement auto."
+      content="Aide rapide pour scan, extraction de donnees, export PDF/CSV/TXT et classement auto."
     />
     <meta property="og:image" content="https://scannerdocument.vercel.app/og-image.png" />
     <meta property="og:url" content="https://scannerdocument.vercel.app/support.html" />
 
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="stylesheet" href="/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <header class="site-header">
@@ -45,40 +39,72 @@
     </header>
 
     <main class="wrapper">
-      <article class="legal">
-        <h1>Support utilisateur</h1>
-        <p>Derniere mise a jour: 18 fevrier 2026</p>
-
-        <h2>Contact principal</h2>
+      <section class="page-hero" data-aos="fade-up">
+        <span class="hero-eyebrow"><i data-lucide="life-buoy"></i> Aide utilisateur</span>
+        <h1>Support Scanner OCR Offline</h1>
         <p>
-          Email support: <a href="mailto:support@scannerdocument.vercel.app">support@scannerdocument.vercel.app</a>
+          Pour t'aider vite, envoie ton contexte (modele d'appareil, version app, capture ecran et etapes).
+          Notre objectif est une reponse claire sous 24 a 72 heures ouvrables.
         </p>
+        <div class="page-meta">
+          <span class="page-chip">Support reactif</span>
+          <span class="page-chip">Feedback produit</span>
+          <span class="page-chip">Mise a jour: 18 fevrier 2026</span>
+        </div>
+      </section>
 
-        <h2>Delai de reponse cible</h2>
-        <p>
-          24 a 72 heures ouvrables.
-        </p>
+      <section class="legal-shell">
+        <article class="legal" data-aos="fade-up" data-aos-delay="40">
+          <h2>Contact principal</h2>
+          <p>
+            Email support: <a href="mailto:support@scannerdocument.vercel.app">support@scannerdocument.vercel.app</a>
+          </p>
 
-        <h2>Informations a fournir dans un ticket</h2>
-        <ul>
-          <li>Version de l'application.</li>
-          <li>Modele du telephone et version Android/iOS.</li>
-          <li>Description du probleme et etapes pour reproduire.</li>
-          <li>Capture d'ecran ou export d'exemple (sans donnees sensibles).</li>
-        </ul>
+          <h2>Delai de reponse cible</h2>
+          <p>24 a 72 heures ouvrables.</p>
 
-        <h2>FAQ rapide</h2>
-        <h3>L'application envoie-t-elle mes documents sur internet ?</h3>
-        <p>Non, le traitement est local par defaut.</p>
+          <h2>Informations a fournir dans un ticket</h2>
+          <ul>
+            <li>Version de l'application.</li>
+            <li>Modele du telephone et version Android/iOS.</li>
+            <li>Description du probleme et etapes pour reproduire.</li>
+            <li>Capture d'ecran ou export d'exemple (sans donnees sensibles).</li>
+          </ul>
 
-        <h3>Puis-je corriger le texte detecte ?</h3>
-        <p>Oui, le texte et les donnees extraites sont modifiables avant sauvegarde.</p>
+          <h2>FAQ rapide</h2>
+          <h3>L'application envoie-t-elle mes documents sur internet ?</h3>
+          <p>Non, le traitement est local par defaut.</p>
 
-        <h3>Puis-je scanner plusieurs pages d'un meme document ?</h3>
-        <p>Oui, tu peux ajouter des pages dans la meme session de scan.</p>
-      </article>
+          <h3>Puis-je corriger le texte detecte ?</h3>
+          <p>Oui, le texte et les donnees extraites sont modifiables avant sauvegarde.</p>
 
-      <footer class="site-footer">
+          <h3>Puis-je scanner plusieurs pages d'un meme document ?</h3>
+          <p>Oui, tu peux ajouter des pages dans la meme session de scan.</p>
+        </article>
+
+        <aside class="legal-aside" data-aos="fade-up" data-aos-delay="110">
+          <article class="aside-card">
+            <h3>Checklist ticket</h3>
+            <ul>
+              <li>Version app</li>
+              <li>Modele device + OS</li>
+              <li>Description precise</li>
+              <li>Capture d'ecran</li>
+            </ul>
+          </article>
+          <article class="aside-card">
+            <h3>Liens utiles</h3>
+            <p><a href="/privacy.html">Politique de confidentialite</a></p>
+            <p><a href="/terms.html">Conditions d'utilisation</a></p>
+          </article>
+          <article class="aside-card">
+            <h3>Contact direct</h3>
+            <p><a href="mailto:support@scannerdocument.vercel.app">support@scannerdocument.vercel.app</a></p>
+          </article>
+        </aside>
+      </section>
+
+      <footer class="site-footer" data-aos="fade-up">
         <div class="footer-shell">
           <div class="footer-brand-block">
             <a class="footer-brand" href="/">
@@ -131,5 +157,7 @@
         </div>
       </footer>
     </main>
+
+    <script defer src="/script.js"></script>
   </body>
 </html>
