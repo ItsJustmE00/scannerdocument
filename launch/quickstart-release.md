@@ -33,3 +33,6 @@ Date: 2026-02-18
 ```bash
 ./launch/build-store-submission.sh
 ```
+
+5. Execute manual console checklist:
+- `launch/console-execution-runbook.md`

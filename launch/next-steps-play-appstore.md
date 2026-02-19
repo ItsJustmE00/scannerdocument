@@ -3,9 +3,13 @@
 Date: 2026-02-19
 Domain: https://scannerdocument.vercel.app
 
+Execution runbook:
+- `launch/console-execution-runbook.md`
+
 ## 1) App Store / Play Metadata (ready to paste)
 - Source: `launch/store-submission.final.md`
 - Status: ready, except store URLs still pending.
+- Backup metadata source: `launch/app-store-metadata.md`
 
 Set these values when you have store links:
 - Apple Store URL -> replace `PENDING_APPLE_STORE_URL`
@@ -57,4 +61,9 @@ Expected legal routes:
 When store URLs are known:
 ```bash
 ./launch/release-ready.sh scannerdocument.vercel.app "https://apps.apple.com/app/idXXXX" "https://play.google.com/store/apps/details?id=com.example.scannerdocument" GSC_TOKEN BING_TOKEN
+```
+
+Then regenerate final store doc:
+```bash
+./launch/build-store-submission.sh scannerdocument.vercel.app "https://apps.apple.com/app/idXXXX" "https://play.google.com/store/apps/details?id=com.example.scannerdocument" support@scannerdocument.vercel.app
 ```

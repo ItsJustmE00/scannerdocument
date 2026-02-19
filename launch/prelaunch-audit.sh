@@ -40,6 +40,20 @@ else
   echo "[OK] No placeholder found in website files."
 fi
 
+STORE_FILE="$ROOT_DIR/launch/store-submission.final.md"
+if [[ -f "$STORE_FILE" ]]; then
+  if rg -n "PENDING_APPLE_STORE_URL|PENDING_PLAY_STORE_URL|your-domain.com" "$STORE_FILE" >/dev/null; then
+    echo "[WARN] Store submission file still contains pending values: $STORE_FILE"
+    rg -n "PENDING_APPLE_STORE_URL|PENDING_PLAY_STORE_URL|your-domain.com" "$STORE_FILE"
+    echo "Regenerate with:"
+    echo "  ./launch/build-store-submission.sh <domain> <apple_url> <play_url> <support_email>"
+  else
+    echo "[OK] Store submission file has concrete values."
+  fi
+else
+  echo "[WARN] Missing file: $STORE_FILE"
+fi
+
 if [[ $# -ge 1 ]]; then
   DOMAIN="$1"
   printf "\n== Live checks for %s ==\n" "$DOMAIN"

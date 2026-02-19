@@ -1,6 +1,6 @@
 # App Store / Play Store Metadata Pack
 
-Date: 2026-02-18
+Date: 2026-02-19
 
 ## 1) App title (avec mots-cles)
 Option recommandee (iOS <= 30 caracteres):
@@ -13,6 +13,9 @@ Alternatives:
 ## 2) Subtitle (ne pas laisser vide)
 Option recommandee (iOS <= 30 caracteres):
 - **FR/AR, PDF, Excel, Sans Cloud** (29)
+
+Alternative:
+- **Scanner prive, export pro** (25)
 
 ## 3) Description (hook dans les 2 premieres lignes)
 Proposition:
@@ -38,6 +41,18 @@ Ideal pour:
 ## 4) Keywords recherches et ajoutees
 Pour iOS (champ mots-cles, separes par virgules, sans repetition inutile):
 - scanner,document,facture,recu,contrat,pdf,excel,offline,archive,confidentiel,ocr,francais,arabe
+
+Keyword bank additionnel (Play metadata / tests ASO):
+- scan document
+- scanner facture
+- recu pdf
+- contrat archive
+- export excel
+- document prive
+- offline scanner
+- receipt scanner
+- invoice scanner
+- private document scanner
 
 ## 5) Screenshots (benefices, pas fonctionnalites)
 Ordre recommande (6 captures):
@@ -70,12 +85,21 @@ Storyboard 20-30 secondes:
 - Recommande: **4+** (pas de contenu sensible natif)
 - Cocher selon les questionnaires stores: pas de violence, pas de jeu d'argent, pas de contenu adulte.
 
-## 10) Notes importantes avant soumission
+## 10) Limites de caracteres utiles (anti-rejet)
+- iOS App Name: 30
+- iOS Subtitle: 30
+- iOS Promotional Text: 170
+- iOS Keywords field: 100
+- Play App Name: 30
+- Play Short Description: 80
+- Play Full Description: 4000
+
+## 11) Notes importantes avant soumission
 - Remplacer `scannerdocument.vercel.app` partout.
 - Verifier que les URLs legales sont publiques et en HTTPS.
 - Uniformiser les textes store et landing page (meme promesse produit).
 
-## 11) Keywords par marche (option)
+## 12) Keywords par marche (option)
 FR (prioritaire):
 - scanner,document,facture,recu,contrat,pdf,excel,offline,archive,confidentiel
 

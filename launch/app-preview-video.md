@@ -40,3 +40,8 @@ Show fast value: scan -> extract -> edit -> export.
 - FPS: 30
 - Resolution: vertical device-native
 - Audio: optional, captions mandatory
+
+## Store specs reminder
+- App Store: jusqu'a 3 previews par device family, 15-30s recommande
+- Google Play: promo video YouTube optionnelle (fortement conseillee)
+- Toujours eviter toute donnee personnelle visible dans la video

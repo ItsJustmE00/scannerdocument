@@ -26,4 +26,5 @@ Next manual steps:
 1) Deploy website/ on HTTPS
 2) Submit sitemap to Google Search Console and Bing
 3) Run: ./website/indexnow-submit.sh $DOMAIN
+4) Follow: launch/console-execution-runbook.md
 MSG

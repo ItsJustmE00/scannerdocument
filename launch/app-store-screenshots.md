@@ -36,6 +36,16 @@ Each screenshot should answer: "What do I gain in 3 seconds?"
 - iPhone 6.7": 1290 x 2796
 - iPhone 6.5": 1242 x 2688
 - iPad 12.9": 2048 x 2732
+- Android phone (Play): 1080 x 1920 ou 1440 x 2560 (9:16)
+- Android tablet (Play, option): 1920 x 1200 minimum
+
+## Naming convention (recommended)
+- `01-benefice-scan-multipage.png`
+- `02-benefice-offline-prive.png`
+- `03-benefice-classement-auto.png`
+- `04-benefice-correction-donnees.png`
+- `05-benefice-recherche-rapide.png`
+- `06-benefice-export-pro.png`
 
 ## Text rules
 - Keep headline <= 8 words.
