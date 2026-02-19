@@ -1,4 +1,4 @@
-const CACHE_NAME = 'scanner-offline-site-v3';
+const CACHE_NAME = 'scanner-offline-site-v4';
 
 const STATIC_ASSETS = [
   '/',

@@ -1,3 +1,79 @@
+(function mobileHeaderMenu() {
+  const header = document.querySelector('.site-header');
+  if (!header) {
+    return;
+  }
+
+  const toggle = header.querySelector('[data-menu-toggle]');
+  const panel = header.querySelector('[data-header-menu]');
+  if (!toggle || !panel) {
+    return;
+  }
+
+  const desktopQuery = window.matchMedia('(min-width: 761px)');
+
+  function setMenuOpen(isOpen) {
+    const open = Boolean(isOpen);
+    header.classList.toggle('is-menu-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    toggle.textContent = open ? 'Fermer' : 'Menu';
+  }
+
+  setMenuOpen(false);
+
+  toggle.addEventListener('click', function () {
+    const open = header.classList.contains('is-menu-open');
+    setMenuOpen(!open);
+  });
+
+  panel.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (!desktopQuery.matches) {
+        setMenuOpen(false);
+      }
+    });
+  });
+
+  const themeToggle = panel.querySelector('[data-theme-toggle]');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      if (!desktopQuery.matches) {
+        setTimeout(function () {
+          setMenuOpen(false);
+        }, 60);
+      }
+    });
+  }
+
+  document.addEventListener('click', function (event) {
+    if (desktopQuery.matches) {
+      return;
+    }
+    if (!header.contains(event.target)) {
+      setMenuOpen(false);
+    }
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      setMenuOpen(false);
+    }
+  });
+
+  const onViewportChange = function (event) {
+    if (event.matches) {
+      setMenuOpen(false);
+    }
+  };
+
+  if (typeof desktopQuery.addEventListener === 'function') {
+    desktopQuery.addEventListener('change', onViewportChange);
+  } else if (typeof desktopQuery.addListener === 'function') {
+    desktopQuery.addListener(onViewportChange);
+  }
+})();
+
 (function themeModeToggle() {
   const storageKey = 'scanner_theme_mode';
   const root = document.documentElement;

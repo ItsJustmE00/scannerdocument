@@ -24,7 +24,17 @@
           <img src="/assets/logo-icon.png" alt="Logo Scanner OCR Offline" />
           <span>Scanner OCR Offline</span>
         </a>
-        <div class="header-actions">
+        <button
+          class="menu-toggle"
+          type="button"
+          data-menu-toggle
+          aria-expanded="false"
+          aria-controls="site-menu"
+          aria-label="Ouvrir le menu"
+        >
+          Menu
+        </button>
+        <div class="header-actions" id="site-menu" data-header-menu>
           <nav class="nav" aria-label="Navigation legale">
             <a href="/">Accueil</a>
             <a href="/privacy">Confidentialite</a>
@@ -157,11 +167,6 @@
 
         <div class="footer-bottom">
           <p>(c) 2026 Scanner OCR Offline. Tous droits reserves.</p>
-          <div class="footer-inline-links">
-            <a href="/">Accueil</a>
-            <a href="/privacy">Confidentialite</a>
-            <a href="/support">Support</a>
-          </div>
         </div>
       </footer>
     </main>
