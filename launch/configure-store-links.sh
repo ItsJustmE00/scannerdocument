@@ -17,6 +17,14 @@ if [[ ! -f "$INDEX_FILE" ]]; then
   exit 1
 fi
 
+# New website defaults to internal fallback links until store links are known.
+# Replace fallback targets and remove "bientot" labels when real URLs are set.
+sed -i "s|/support?store=app-store|${APPLE_URL}|g" "$INDEX_FILE"
+sed -i "s|/support?store=google-play|${PLAY_URL}|g" "$INDEX_FILE"
+sed -i "s|App Store (bientot)|App Store|g" "$INDEX_FILE"
+sed -i "s|Google Play (bientot)|Google Play|g" "$INDEX_FILE"
+
+# Backward compatibility for old placeholder-based index versions.
 sed -i "s|APPLE_STORE_URL_PLACEHOLDER|${APPLE_URL}|g" "$INDEX_FILE"
 sed -i "s|PLAY_STORE_URL_PLACEHOLDER|${PLAY_URL}|g" "$INDEX_FILE"
 

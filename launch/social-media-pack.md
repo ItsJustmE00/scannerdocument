@@ -38,7 +38,7 @@ Tu peux:
 - exporter en PDF, Excel, TXT ou JSON.
 
 Lien: https://scannerdocument.vercel.app/
-Support: https://scannerdocument.vercel.app/support.html
+Support: https://scannerdocument.vercel.app/support
 
 Merci pour ton retour !"
 

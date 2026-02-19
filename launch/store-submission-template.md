@@ -3,8 +3,8 @@
 Date: 2026-02-18
 
 Default store links for website:
-- Apple: `APPLE_STORE_URL_PLACEHOLDER`
-- Play: `PLAY_STORE_URL_PLACEHOLDER`
+- Apple: `PENDING_APPLE_STORE_URL`
+- Play: `PENDING_PLAY_STORE_URL`
 
 ## Apple App Store Connect
 
@@ -41,10 +41,10 @@ Age Rating:
 4+
 
 Privacy Policy URL:
-https://scannerdocument.vercel.app/privacy.html
+https://scannerdocument.vercel.app/privacy
 
 Support URL:
-https://scannerdocument.vercel.app/support.html
+https://scannerdocument.vercel.app/support
 
 Marketing URL:
 https://scannerdocument.vercel.app/
@@ -68,7 +68,7 @@ Fonctions cles:
 - Export PDF, Excel, TXT et JSON.
 
 Privacy Policy URL:
-https://scannerdocument.vercel.app/privacy.html
+https://scannerdocument.vercel.app/privacy
 
 Support Email:
 support@scannerdocument.vercel.app

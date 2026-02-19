@@ -1,6 +1,6 @@
 # Launch Checklist (etat reel)
 
-Date: 2026-02-18
+Date: 2026-02-19
 
 ## App Store Stuff
 - [x] App title avec keywords (prepare dans `launch/app-store-metadata.md`)
@@ -22,10 +22,11 @@ Date: 2026-02-18
 - [x] Open Graph tags (`og:title`, `og:description`, `og:image`, `og:url`)
 - [x] Favicon ajoute
 - [x] Responsive mobile
-- [ ] SSL actif (a activer sur ton hebergeur)
+- [x] SSL actif (`https://scannerdocument.vercel.app`)
 - [x] CTA buttons en place
 - [x] Script liens store pret (`launch/configure-store-links.sh`)
 - [x] One-command release prep (`launch/release-ready.sh` / `launch/release-ready.ps1`)
+- [x] Routes legales propres (`/privacy`, `/terms`, `/support`)
 
 ## SEO Stuff
 - [x] Meta title + description definis

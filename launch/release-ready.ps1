@@ -54,10 +54,17 @@ foreach ($file in $files) {
 }
 
 $indexFile = "$RootDir\website\index.html"
+# Current website uses fallback links before real store URLs are known.
+Replace-InFile -Path $indexFile -Pattern "/support?store=app-store" -Replacement $AppleStoreUrl
+Replace-InFile -Path $indexFile -Pattern "/support?store=google-play" -Replacement $PlayStoreUrl
+Replace-InFile -Path $indexFile -Pattern "App Store (bientot)" -Replacement "App Store"
+Replace-InFile -Path $indexFile -Pattern "Google Play (bientot)" -Replacement "Google Play"
+
+# Backward compatibility for old placeholder-based index versions.
 Replace-InFile -Path $indexFile -Pattern "APPLE_STORE_URL_PLACEHOLDER" -Replacement $AppleStoreUrl
 Replace-InFile -Path $indexFile -Pattern "PLAY_STORE_URL_PLACEHOLDER" -Replacement $PlayStoreUrl
 
-$pattern = "your-domain.com|REPLACE_WITH_GOOGLE_TOKEN|REPLACE_WITH_BING_TOKEN|APPLE_STORE_URL_PLACEHOLDER|PLAY_STORE_URL_PLACEHOLDER"
+$pattern = "your-domain.com|REPLACE_WITH_GOOGLE_TOKEN|REPLACE_WITH_BING_TOKEN|APPLE_STORE_URL_PLACEHOLDER|PLAY_STORE_URL_PLACEHOLDER|/support\\?store=app-store|/support\\?store=google-play|App Store \\(bientot\\)|Google Play \\(bientot\\)"
 $websiteFiles = Get-ChildItem -Path "$RootDir\website" -File -Recurse | Where-Object { $_.Name -ne "DEPLOY.md" }
 $hits = $websiteFiles | Select-String -Pattern $pattern
 

@@ -26,7 +26,7 @@ for file in "${required_files[@]}"; do
   fi
 done
 
-PLACEHOLDER_PATTERN="your-domain.com|REPLACE_WITH_GOOGLE_TOKEN|REPLACE_WITH_BING_TOKEN|APPLE_STORE_URL_PLACEHOLDER|PLAY_STORE_URL_PLACEHOLDER"
+PLACEHOLDER_PATTERN="your-domain.com|REPLACE_WITH_GOOGLE_TOKEN|REPLACE_WITH_BING_TOKEN|APPLE_STORE_URL_PLACEHOLDER|PLAY_STORE_URL_PLACEHOLDER|/support\\?store=app-store|/support\\?store=google-play|App Store \\(bientot\\)|Google Play \\(bientot\\)|PENDING_APPLE_STORE_URL|PENDING_PLAY_STORE_URL"
 
 if rg -n -g '!DEPLOY.md' "$PLACEHOLDER_PATTERN" "$WEBSITE_DIR" >/dev/null; then
   echo "[WARN] Placeholders still present in website files."
@@ -42,12 +42,15 @@ fi
 
 if [[ $# -ge 1 ]]; then
   DOMAIN="$1"
-  echo "\n== Live checks for ${DOMAIN} =="
-  curl -sS -I "https://${DOMAIN}" | head -n 1 || true
+  printf "\n== Live checks for %s ==\n" "$DOMAIN"
+  for url in "/" "/privacy" "/terms" "/support"; do
+    status="$(curl -sS -o /dev/null -w "%{http_code}" "https://${DOMAIN}${url}" || true)"
+    echo "[HTTP ${status}] https://${DOMAIN}${url}"
+  done
   curl -sS "https://${DOMAIN}/robots.txt" | head -n 5 || true
   curl -sS "https://${DOMAIN}/sitemap.xml" | head -n 5 || true
   curl -sS "https://${DOMAIN}/indexnow-key.txt" | head -n 2 || true
 else
-  echo "\nTip: run with domain for live checks"
+  printf "\nTip: run with domain for live checks\n"
   echo "Example: ./launch/prelaunch-audit.sh app.example.com"
 fi

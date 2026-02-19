@@ -13,7 +13,7 @@ Date: 2026-02-18
 1. Ajouter la propriete domaine ou URL-prefix.
 2. Verifier avec la meta tag ou DNS TXT.
 3. Soumettre: `https://scannerdocument.vercel.app/sitemap.xml`.
-4. Verifier l'indexation de `/`, `/privacy.html`, `/terms.html`, `/support.html`.
+4. Verifier l'indexation de `/`, `/privacy`, `/terms`, `/support`.
 
 ## 3) Bing Webmaster Tools
 1. Ajouter le site.
@@ -44,9 +44,9 @@ curl -X POST "https://api.indexnow.org/indexnow" \
     "keyLocation": "https://scannerdocument.vercel.app/indexnow-key.txt",
     "urlList": [
       "https://scannerdocument.vercel.app/",
-      "https://scannerdocument.vercel.app/privacy.html",
-      "https://scannerdocument.vercel.app/terms.html",
-      "https://scannerdocument.vercel.app/support.html"
+      "https://scannerdocument.vercel.app/privacy",
+      "https://scannerdocument.vercel.app/terms",
+      "https://scannerdocument.vercel.app/support"
     ]
   }'
 ```

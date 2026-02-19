@@ -17,14 +17,17 @@ if (-not $Domain -and (Test-Path $IndexFile)) {
 }
 
 if (-not $AppleStoreUrl -and (Test-Path $IndexFile)) {
-  $line = Select-String -Path $IndexFile -Pattern 'href="([^"]*)"[^>]*>App Store<' | Select-Object -First 1
+  $line = Select-String -Path $IndexFile -Pattern 'href="([^"]*)"[^>]*>App Store[^<]*<' | Select-Object -First 1
   if ($line) { $AppleStoreUrl = $line.Matches[0].Groups[1].Value }
 }
 
 if (-not $PlayStoreUrl -and (Test-Path $IndexFile)) {
-  $line = Select-String -Path $IndexFile -Pattern 'href="([^"]*)"[^>]*>Google Play<' | Select-Object -First 1
+  $line = Select-String -Path $IndexFile -Pattern 'href="([^"]*)"[^>]*>Google Play[^<]*<' | Select-Object -First 1
   if ($line) { $PlayStoreUrl = $line.Matches[0].Groups[1].Value }
 }
+
+if ($AppleStoreUrl -match '/support\?store=') { $AppleStoreUrl = "" }
+if ($PlayStoreUrl -match '/support\?store=') { $PlayStoreUrl = "" }
 
 if (-not $SupportEmail -and (Test-Path $SupportFile)) {
   $line = Select-String -Path $SupportFile -Pattern 'mailto:([^"<>]*)' | Select-Object -First 1
@@ -32,18 +35,19 @@ if (-not $SupportEmail -and (Test-Path $SupportFile)) {
 }
 
 if (-not $Domain) { $Domain = "your-domain.com" }
-if (-not $AppleStoreUrl) { $AppleStoreUrl = "APPLE_STORE_URL_PLACEHOLDER" }
-if (-not $PlayStoreUrl) { $PlayStoreUrl = "PLAY_STORE_URL_PLACEHOLDER" }
+if (-not $AppleStoreUrl) { $AppleStoreUrl = "PENDING_APPLE_STORE_URL" }
+if (-not $PlayStoreUrl) { $PlayStoreUrl = "PENDING_PLAY_STORE_URL" }
 if (-not $SupportEmail) { $SupportEmail = "support@your-domain.com" }
 
-$PrivacyUrl = "https://$Domain/privacy.html"
-$SupportUrl = "https://$Domain/support.html"
+$PrivacyUrl = "https://$Domain/privacy"
+$SupportUrl = "https://$Domain/support"
 $MarketingUrl = "https://$Domain/"
+$Today = Get-Date -Format "yyyy-MM-dd"
 
 $content = @"
 # Store Submission Final (generated)
 
-Date: 2026-02-18
+Date: $Today
 
 ## URLs
 - Website: $MarketingUrl
@@ -125,7 +129,7 @@ Set-Content -Path $OutputFile -Value $content -NoNewline
 
 $warn = $false
 foreach ($value in @($Domain, $AppleStoreUrl, $PlayStoreUrl, $SupportEmail)) {
-  if ($value -match 'your-domain.com|PLACEHOLDER') {
+  if ($value -match 'your-domain.com|PLACEHOLDER|PENDING_|/support\?store=') {
     $warn = $true
   }
 }

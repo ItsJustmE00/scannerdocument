@@ -16,30 +16,39 @@ if [[ -z "$DOMAIN" && -f "$INDEX_FILE" ]]; then
 fi
 
 if [[ -z "$APPLE_URL" && -f "$INDEX_FILE" ]]; then
-  APPLE_URL="$(sed -n 's|.*href="\([^"]*\)"[^>]*>App Store<.*|\1|p' "$INDEX_FILE" | head -n 1)"
+  APPLE_URL="$(sed -n 's|.*href="\([^"]*\)"[^>]*>App Store[^<]*<.*|\1|p' "$INDEX_FILE" | head -n 1)"
 fi
 
 if [[ -z "$PLAY_URL" && -f "$INDEX_FILE" ]]; then
-  PLAY_URL="$(sed -n 's|.*href="\([^"]*\)"[^>]*>Google Play<.*|\1|p' "$INDEX_FILE" | head -n 1)"
+  PLAY_URL="$(sed -n 's|.*href="\([^"]*\)"[^>]*>Google Play[^<]*<.*|\1|p' "$INDEX_FILE" | head -n 1)"
+fi
+
+if [[ "$APPLE_URL" == *"/support?store="* ]]; then
+  APPLE_URL=""
+fi
+
+if [[ "$PLAY_URL" == *"/support?store="* ]]; then
+  PLAY_URL=""
 fi
 
 if [[ -z "$SUPPORT_EMAIL" && -f "$SUPPORT_FILE" ]]; then
   SUPPORT_EMAIL="$(sed -n 's|.*mailto:\([^"<>]*\).*|\1|p' "$SUPPORT_FILE" | head -n 1)"
 fi
 
+TODAY="$(date +%F)"
 DOMAIN="${DOMAIN:-your-domain.com}"
-APPLE_URL="${APPLE_URL:-APPLE_STORE_URL_PLACEHOLDER}"
-PLAY_URL="${PLAY_URL:-PLAY_STORE_URL_PLACEHOLDER}"
+APPLE_URL="${APPLE_URL:-PENDING_APPLE_STORE_URL}"
+PLAY_URL="${PLAY_URL:-PENDING_PLAY_STORE_URL}"
 SUPPORT_EMAIL="${SUPPORT_EMAIL:-support@your-domain.com}"
 
-PRIVACY_URL="https://${DOMAIN}/privacy.html"
-SUPPORT_URL="https://${DOMAIN}/support.html"
+PRIVACY_URL="https://${DOMAIN}/privacy"
+SUPPORT_URL="https://${DOMAIN}/support"
 MARKETING_URL="https://${DOMAIN}/"
 
 cat > "$OUTPUT_FILE" <<DOC
 # Store Submission Final (generated)
 
-Date: 2026-02-18
+Date: ${TODAY}
 
 ## URLs
 - Website: ${MARKETING_URL}
@@ -119,7 +128,7 @@ DOC
 
 warn=0
 for value in "$DOMAIN" "$APPLE_URL" "$PLAY_URL" "$SUPPORT_EMAIL"; do
-  if [[ "$value" == *"your-domain.com"* ]] || [[ "$value" == *"PLACEHOLDER"* ]]; then
+  if [[ "$value" == *"your-domain.com"* ]] || [[ "$value" == *"PLACEHOLDER"* ]] || [[ "$value" == *"/support?store="* ]] || [[ "$value" == PENDING_* ]]; then
     warn=1
   fi
 done

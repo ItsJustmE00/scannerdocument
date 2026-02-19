@@ -1,14 +1,14 @@
 # Store Submission Final (generated)
 
-Date: 2026-02-18
+Date: 2026-02-19
 
 ## URLs
 - Website: https://scannerdocument.vercel.app/
-- Privacy: https://scannerdocument.vercel.app/privacy.html
-- Support: https://scannerdocument.vercel.app/support.html
+- Privacy: https://scannerdocument.vercel.app/privacy
+- Support: https://scannerdocument.vercel.app/support
 - Support Email: support@scannerdocument.vercel.app
-- Apple Store URL: APPLE_STORE_URL_PLACEHOLDER
-- Play Store URL: PLAY_STORE_URL_PLACEHOLDER
+- Apple Store URL: PENDING_APPLE_STORE_URL
+- Play Store URL: PENDING_PLAY_STORE_URL
 
 ## Apple App Store Connect
 
@@ -45,10 +45,10 @@ Age Rating:
 4+
 
 Privacy Policy URL:
-https://scannerdocument.vercel.app/privacy.html
+https://scannerdocument.vercel.app/privacy
 
 Support URL:
-https://scannerdocument.vercel.app/support.html
+https://scannerdocument.vercel.app/support
 
 Marketing URL:
 https://scannerdocument.vercel.app/
@@ -72,7 +72,7 @@ Fonctions cles:
 - Export PDF, Excel, TXT et JSON.
 
 Privacy Policy URL:
-https://scannerdocument.vercel.app/privacy.html
+https://scannerdocument.vercel.app/privacy
 
 Support Email:
 support@scannerdocument.vercel.app

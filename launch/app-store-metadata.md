@@ -58,8 +58,8 @@ Storyboard 20-30 secondes:
 6. Message final: "Sans cloud. Sans login. 100% offline."
 
 ## 7) URLs obligatoires
-- Privacy policy URL: `https://scannerdocument.vercel.app/privacy.html`
-- Support URL: `https://scannerdocument.vercel.app/support.html`
+- Privacy policy URL: `https://scannerdocument.vercel.app/privacy`
+- Support URL: `https://scannerdocument.vercel.app/support`
 - Website URL: `https://scannerdocument.vercel.app/`
 
 ## 8) Categorie app
