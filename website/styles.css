@@ -444,6 +444,10 @@ a {
   gap: 14px;
 }
 
+.benefit-grid {
+  gap: 16px;
+}
+
 .card {
   background: linear-gradient(165deg, rgba(255, 255, 255, 0.98), rgba(245, 250, 255, 0.94));
   border: 1px solid rgba(181, 202, 220, 0.55);
@@ -458,6 +462,36 @@ a {
   box-shadow: 0 20px 38px rgba(12, 46, 74, 0.14);
 }
 
+.benefit-grid .card {
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-grid .card::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 3px;
+  opacity: 0.75;
+}
+
+.card--entry::before {
+  background: linear-gradient(90deg, #0ea5e9, #14b8a6);
+}
+
+.card--classify::before {
+  background: linear-gradient(90deg, #22c55e, #0ea5e9);
+}
+
+.card--export::before {
+  background: linear-gradient(90deg, #1e3a8a, #1e40af, #1d4ed8);
+}
+
+.card--privacy::before {
+  background: linear-gradient(90deg, #10b981, #0f766e);
+}
+
 .card-icon {
   width: 42px;
   height: 42px;
@@ -468,6 +502,29 @@ a {
   color: #f7fdff;
   background: linear-gradient(145deg, var(--brand), var(--brand-strong));
   box-shadow: 0 10px 18px rgba(15, 79, 116, 0.26);
+}
+
+.card--entry .card-icon {
+  background: linear-gradient(145deg, #0e7490, #0891b2);
+}
+
+.card--classify .card-icon {
+  background: linear-gradient(145deg, #0f766e, #22c55e);
+}
+
+.card--export .card-icon {
+  background: linear-gradient(145deg, #1e3a8a, #1d4ed8);
+}
+
+.card--privacy .card-icon {
+  background: linear-gradient(145deg, #0f766e, #14b8a6);
+}
+
+.card-icon img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
 }
 
 .card-icon i {
@@ -530,6 +587,64 @@ i[data-lucide='life-buoy']::before {
 .card p {
   margin: 0;
   color: var(--muted);
+}
+
+.export-rail {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.format-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 12px;
+  padding: 10px 6px 8px;
+  border: 1px solid rgba(154, 184, 208, 0.45);
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.9), rgba(237, 245, 253, 0.86));
+  box-shadow: 0 6px 14px rgba(13, 42, 66, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.format-logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(13, 42, 66, 0.14);
+}
+
+.format-logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 6px 12px rgba(8, 25, 40, 0.16));
+}
+
+.format-logo span {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #173147;
+}
+
+.format-logo--pdf {
+  border-color: rgba(239, 68, 68, 0.34);
+}
+
+.format-logo--csv {
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+.format-logo--txt {
+  border-color: rgba(71, 85, 105, 0.35);
+}
+
+.format-logo--json {
+  border-color: rgba(124, 58, 237, 0.35);
 }
 
 .workflow {
@@ -1057,6 +1172,10 @@ i[data-lucide='life-buoy']::before {
     gap: 10px;
   }
 
+  .export-rail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .card,
   .workflow-step {
     padding: 14px;
@@ -1238,6 +1357,11 @@ i[data-lucide='life-buoy']::before {
 
   .footer-col a {
     min-height: 36px;
+  }
+
+  .format-logo img {
+    width: 38px;
+    height: 38px;
   }
 }
 
@@ -1484,6 +1608,16 @@ html[data-theme='dark'] .theme-toggle-icon {
 
 html[data-theme='dark'] .site-footer {
   border-color: rgba(84, 126, 155, 0.22);
+}
+
+html[data-theme='dark'] .format-logo {
+  background: linear-gradient(165deg, rgba(20, 41, 62, 0.86), rgba(16, 33, 51, 0.92));
+  border-color: rgba(130, 176, 210, 0.3);
+  box-shadow: 0 8px 16px rgba(7, 18, 29, 0.34);
+}
+
+html[data-theme='dark'] .format-logo span {
+  color: #dceaf7;
 }
 
 @media (max-width: 760px) {

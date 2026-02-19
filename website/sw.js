@@ -1,4 +1,4 @@
-const CACHE_NAME = 'scanner-offline-site-v5';
+const CACHE_NAME = 'scanner-offline-site-v7';
 
 const STATIC_ASSETS = [
   '/',
@@ -22,6 +22,14 @@ const STATIC_ASSETS = [
   '/assets/logo-full.png',
   '/assets/app-store-logo.svg',
   '/assets/google-play-logo.svg',
+  '/assets/icons/benefit-entry.svg',
+  '/assets/icons/benefit-classify.svg',
+  '/assets/icons/benefit-export.svg',
+  '/assets/icons/benefit-privacy.svg',
+  '/assets/formats/pdf.svg',
+  '/assets/formats/csv.svg',
+  '/assets/formats/txt.svg',
+  '/assets/formats/json.svg',
 ];
 
 function normalizePath(pathname) {

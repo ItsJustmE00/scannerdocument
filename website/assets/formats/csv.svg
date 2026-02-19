@@ -1,0 +1,15 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="csvBg" x1="9" y1="8" x2="55" y2="57" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22C55E"/>
+      <stop offset="1" stop-color="#15803D"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="52" height="52" rx="14" fill="url(#csvBg)"/>
+  <rect x="17" y="17" width="30" height="30" rx="6" fill="white" fill-opacity="0.96"/>
+  <path d="M17 27H47" stroke="#22C55E" stroke-width="2"/>
+  <path d="M17 37H47" stroke="#22C55E" stroke-width="2"/>
+  <path d="M27 17V47" stroke="#22C55E" stroke-width="2"/>
+  <path d="M37 17V47" stroke="#22C55E" stroke-width="2"/>
+  <path d="M42 44L45 47L50 41" stroke="#D1FAE5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

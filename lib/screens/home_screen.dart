@@ -353,6 +353,38 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                     const SizedBox(height: 10),
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 8,
+                      ),
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.06)
+                            : Colors.white.withValues(alpha: 0.72),
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.14)
+                              : Colors.black.withValues(alpha: 0.08),
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.verified_user_rounded, size: 16),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              'Aucune donnée envoyée, 100% local.',
+                              style: Theme.of(context).textTheme.bodySmall
+                                  ?.copyWith(fontWeight: FontWeight.w600),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 10),
                     FilledButton.icon(
                       onPressed: _openScanner,
                       icon: const Icon(Icons.camera_alt_rounded),
@@ -390,7 +422,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(
                   child: _SummaryCard(
                     icon: Icons.folder_open_rounded,
-                    label: 'Documents',
+                    label: 'Document',
                     value: '${_documents.length}',
                   ),
                 ),
@@ -398,7 +430,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(
                   child: _SummaryCard(
                     icon: Icons.auto_awesome_rounded,
-                    label: 'Extraits',
+                    label: 'Extrait',
                     value: '$_documentsWithExtractedData',
                   ),
                 ),
@@ -406,7 +438,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(
                   child: _SummaryCard(
                     icon: Icons.filter_list_rounded,
-                    label: 'Visibles',
+                    label: 'Visible',
                     value: '${_filteredDocuments.length}',
                   ),
                 ),
@@ -647,18 +679,25 @@ class _SummaryCard extends StatelessWidget {
             Icon(icon, size: 18),
             const SizedBox(width: 8),
             Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    value,
-                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.w800,
+              child: Text.rich(
+                TextSpan(
+                  children: [
+                    TextSpan(
+                      text: '$value ',
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.w800,
+                      ),
                     ),
-                  ),
-                  Text(label, style: Theme.of(context).textTheme.bodySmall),
-                ],
+                    TextSpan(
+                      text: label,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
