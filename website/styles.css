@@ -196,6 +196,13 @@ a {
   padding: 28px 22px 58px;
 }
 
+#top,
+#benefices,
+#securite,
+#telecharger {
+  scroll-margin-top: 92px;
+}
+
 .hero {
   margin-top: 8px;
   border-radius: var(--radius-xl);
@@ -898,28 +905,126 @@ i[data-lucide='life-buoy']::before {
 @media (max-width: 760px) {
   .header-inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    padding: 12px 14px;
+  }
+
+  .brand {
+    width: 100%;
   }
 
   .header-actions {
+    flex-direction: column;
+    align-items: stretch;
     width: 100%;
-    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
   }
 
+  .nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.86rem;
+    line-height: 1.25;
+    min-height: 40px;
+    text-align: center;
+    padding: 9px 8px;
+    border-color: rgba(13, 79, 116, 0.18);
+    background: rgba(255, 255, 255, 0.72);
+  }
+
   .theme-toggle {
-    padding: 0 10px;
+    width: 100%;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 12px;
   }
 
   .wrapper {
-    padding: 18px 14px 44px;
+    padding: 16px 12px 42px;
   }
 
   .hero,
   .page-hero,
   .legal {
     border-radius: 18px;
-    padding: 20px;
+    padding: 18px;
+  }
+
+  .hero {
+    gap: 14px;
+  }
+
+  .hero-panel {
+    padding: 14px;
+  }
+
+  .hero p {
+    font-size: 0.96rem;
+  }
+
+  .cta-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .cta-row .button {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0 14px;
+  }
+
+  .store-button span {
+    flex: 1;
+    text-align: left;
+  }
+
+  .store-logo {
+    width: 20px;
+    height: 20px;
+  }
+
+  .section {
+    margin-top: 26px;
+  }
+
+  .grid,
+  .workflow,
+  .kpi {
+    gap: 10px;
+  }
+
+  .card,
+  .workflow-step {
+    padding: 14px;
+  }
+
+  .page-meta {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .page-chip {
+    text-align: center;
+  }
+
+  .legal-shell {
+    gap: 10px;
+  }
+
+  .legal-aside {
+    padding: 14px;
   }
 
   .hero-highlights {
@@ -927,23 +1032,61 @@ i[data-lucide='life-buoy']::before {
   }
 
   .footer-shell {
-    padding: 18px 16px 14px;
+    padding: 16px 14px 12px;
+    gap: 14px;
+  }
+
+  .footer-tagline {
+    max-width: none;
   }
 
   .footer-cols {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .footer-bottom {
-    padding: 12px 16px 14px;
+    padding: 12px 14px 14px;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .footer-inline-links {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .cookie-inner {
+    padding: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .cookie-inner p {
+    max-width: none;
+    font-size: 0.9rem;
+  }
+
+  .cookie-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .cookie-actions button {
+    width: 100%;
   }
 }
 
 @media (max-width: 560px) {
+  .nav {
+    grid-template-columns: 1fr;
+  }
+
   .hero h1 {
-    font-size: 1.82rem;
+    font-size: 1.7rem;
   }
 
   .hero p,
@@ -960,8 +1103,26 @@ i[data-lucide='life-buoy']::before {
     gap: 8px;
   }
 
+  .tag-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tag {
+    text-align: center;
+  }
+
   .button {
     width: 100%;
+  }
+
+  .theme-toggle-label {
+    font-size: 0.78rem;
+  }
+
+  .footer-inline-links {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -1031,6 +1192,18 @@ i[data-lucide='life-buoy']::before {
 
   .site-footer {
     border-color: rgba(84, 126, 155, 0.22);
+  }
+}
+
+@media (prefers-color-scheme: dark) and (max-width: 760px) {
+  .nav a {
+    background: rgba(20, 41, 62, 0.82);
+    border-color: rgba(109, 154, 186, 0.35);
+  }
+
+  .nav a:hover {
+    background: rgba(24, 50, 74, 0.95);
+    border-color: rgba(130, 176, 210, 0.45);
   }
 }
 
@@ -1179,6 +1352,18 @@ html[data-theme='dark'] .theme-toggle-icon {
 
 html[data-theme='dark'] .site-footer {
   border-color: rgba(84, 126, 155, 0.22);
+}
+
+@media (max-width: 760px) {
+  html[data-theme='dark'] .nav a {
+    background: rgba(20, 41, 62, 0.82);
+    border-color: rgba(109, 154, 186, 0.35);
+  }
+
+  html[data-theme='dark'] .nav a:hover {
+    background: rgba(24, 50, 74, 0.95);
+    border-color: rgba(130, 176, 210, 0.45);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
