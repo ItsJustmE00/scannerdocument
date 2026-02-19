@@ -1,4 +1,4 @@
-const CACHE_NAME = 'scanner-offline-site-v4';
+const CACHE_NAME = 'scanner-offline-site-v5';
 
 const STATIC_ASSETS = [
   '/',
@@ -6,6 +6,9 @@ const STATIC_ASSETS = [
   '/privacy',
   '/terms',
   '/support',
+  '/privacy/',
+  '/terms/',
+  '/support/',
   '/privacy.html',
   '/terms.html',
   '/support.html',
@@ -68,20 +71,19 @@ self.addEventListener('fetch', (event) => {
         const normalizedPath = normalizePath(requestUrl.pathname);
         const normalizedUrl = `${normalizedPath}${requestUrl.search}`;
 
-        const cachedPage = (await cache.match(normalizedUrl)) || (await cache.match(normalizedPath));
-        if (cachedPage) {
-          return cachedPage;
-        }
-
+        // Network-first so mobile users always get latest legal/footer/content when online.
         try {
-          const networkPage = await fetch(normalizedUrl);
+          const networkPage = await fetch(event.request);
           if (networkPage && networkPage.status === 200 && networkPage.type === 'basic') {
+            cache.put(event.request, networkPage.clone());
             cache.put(normalizedUrl, networkPage.clone());
             cache.put(normalizedPath, networkPage.clone());
           }
           return networkPage;
         } catch {
           return (
+            (await cache.match(event.request)) ||
+            (await cache.match(normalizedUrl)) ||
             (await cache.match(normalizedPath)) ||
             (await cache.match('/')) ||
             (await cache.match('/index.html')) ||
