@@ -69,12 +69,18 @@
           <img src="/assets/logo-icon.png" alt="Logo Scanner OCR Offline" />
           <span>Scanner OCR Offline</span>
         </a>
-        <nav class="nav" aria-label="Navigation principale">
-          <a href="#benefices">Benefices</a>
-          <a href="#securite">Confidentialite</a>
-          <a href="#telecharger">Telecharger</a>
-          <a href="/support">Support</a>
-        </nav>
+        <div class="header-actions">
+          <nav class="nav" aria-label="Navigation principale">
+            <a href="#benefices">Benefices</a>
+            <a href="#securite">Confidentialite</a>
+            <a href="#telecharger">Telecharger</a>
+            <a href="/support">Support</a>
+          </nav>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Basculer le theme" aria-pressed="false">
+            <span class="theme-toggle-icon" data-theme-icon>L</span>
+            <span class="theme-toggle-label" data-theme-label>Mode clair</span>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -95,11 +101,13 @@
             <span class="tag">Sans login</span>
           </div>
           <div class="cta-row" id="telecharger">
-            <a class="button primary" href="/support?store=app-store">
-              <i data-lucide="download"></i> App Store (bientot)
+            <a class="button primary store-button" href="/support?store=app-store">
+              <img class="store-logo" src="/assets/app-store-logo.svg" alt="Logo App Store" />
+              <span>App Store</span>
             </a>
-            <a class="button secondary" href="/support?store=google-play">
-              <i data-lucide="download"></i> Google Play (bientot)
+            <a class="button secondary store-button" href="/support?store=google-play">
+              <img class="store-logo" src="/assets/google-play-logo.svg" alt="Logo Google Play" />
+              <span>Google Play</span>
             </a>
             <a class="button secondary" href="mailto:support@scannerdocument.vercel.app">
               <i data-lucide="mail"></i> Contacter le support

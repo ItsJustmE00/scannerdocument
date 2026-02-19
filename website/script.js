@@ -1,3 +1,82 @@
+(function themeModeToggle() {
+  const storageKey = 'scanner_theme_mode';
+  const root = document.documentElement;
+  const toggle = document.querySelector('[data-theme-toggle]');
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+  function readStoredMode() {
+    try {
+      const value = localStorage.getItem(storageKey);
+      return value === 'dark' || value === 'light' ? value : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function writeStoredMode(mode) {
+    try {
+      localStorage.setItem(storageKey, mode);
+    } catch {
+      // Ignore storage failures.
+    }
+  }
+
+  function getSystemMode() {
+    return mediaQuery.matches ? 'dark' : 'light';
+  }
+
+  function applyMode(mode, persistMode) {
+    const effectiveMode = mode === 'dark' ? 'dark' : 'light';
+    root.setAttribute('data-theme', effectiveMode);
+
+    if (persistMode) {
+      writeStoredMode(effectiveMode);
+    }
+
+    if (!toggle) {
+      return;
+    }
+
+    const isDark = effectiveMode === 'dark';
+    const iconNode = toggle.querySelector('[data-theme-icon]');
+    const labelNode = toggle.querySelector('[data-theme-label]');
+
+    if (iconNode) {
+      iconNode.textContent = isDark ? 'D' : 'L';
+    }
+
+    if (labelNode) {
+      labelNode.textContent = isDark ? 'Mode sombre' : 'Mode clair';
+    }
+
+    toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+    toggle.setAttribute('title', isDark ? 'Passer en mode clair' : 'Passer en mode sombre');
+  }
+
+  const savedMode = readStoredMode();
+  applyMode(savedMode || getSystemMode(), false);
+
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      const currentMode = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      applyMode(currentMode === 'dark' ? 'light' : 'dark', true);
+    });
+  }
+
+  const onSystemModeChange = function (event) {
+    if (readStoredMode()) {
+      return;
+    }
+    applyMode(event.matches ? 'dark' : 'light', false);
+  };
+
+  if (typeof mediaQuery.addEventListener === 'function') {
+    mediaQuery.addEventListener('change', onSystemModeChange);
+  } else if (typeof mediaQuery.addListener === 'function') {
+    mediaQuery.addListener(onSystemModeChange);
+  }
+})();
+
 (function cookieConsent() {
   const banner = document.querySelector('[data-cookie-banner]');
   if (!banner) {

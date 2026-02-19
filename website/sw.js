@@ -1,4 +1,4 @@
-const CACHE_NAME = 'scanner-offline-site-v2';
+const CACHE_NAME = 'scanner-offline-site-v3';
 
 const STATIC_ASSETS = [
   '/',
@@ -17,6 +17,8 @@ const STATIC_ASSETS = [
   '/sitemap.xml',
   '/assets/logo-icon.png',
   '/assets/logo-full.png',
+  '/assets/app-store-logo.svg',
+  '/assets/google-play-logo.svg',
 ];
 
 function normalizePath(pathname) {
